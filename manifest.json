@@ -1,12 +1,12 @@
 {
-    "name": "Phantom Hourglass Archipelago",
-    "game_name": "Phantom Hourglass",
-    "package_version": "0.2",
+    "name": "Phantom Hourglass Archipelago Randomizer Map Tracker",
+    "game_name": "Phantom Hourglass Randomizer",
+    "package_version": "0.1",
     "package_uid": "PH_ap",
-    "author": "DarrklingMuffin & ZobeePlays",
+    "author": "Rom-Steïn, DarrklingMuffin & ZobeePlays",
     "variants": {
-        "Full Tracker": {
-            "display_name": "Item Tracker",
+        "Item_Tracker": {
+            "display_name": "AP Item Tracker",
             "flags": ["ap"]
         },
     },
