@@ -14,36 +14,16 @@
                         "item_margin": "5, 5",
                         "h_alignment": "left",
                         "item_h_alignment": "center",
-                        "item_v_alignment": "center",
+                        "item_v_alignment": "bottom",
                         "item_height": 50,
                         "item_width": 50,
                         "rows": [
-                            [
-                                "crimsoninelabel",
-                                "aquaninelabel",
-                                "azurinelabel",
-                                "additionallabel1",
-                                "additionallabel2",
-                                "additionallabel3",
-                                "additionallabel4",
-                                "additionallabel5"
-                            ],
-                            [
-                                "crimsonine",
-                                "azurine",
-                                "aquanine",
-                                "additional1",
-                                "additional2",
-                                "additional3",
-                                "additional4",
-                                "additional5"
-                            ],
                             [
                                 "sword",
                                 "boomerang",
                                 "bombs",
                                 "bow",
-                                "bombchu",
+                                "bombchus",
                                 "grapplinghook",
                                 "hammer",
                                 "shovel"
@@ -69,16 +49,6 @@
                                 "couragegem"
                             ],
                             [
-                                "couragecrest",
-                                "triforcecrest",
-                                "blade",
-                                "clothes",
-                                "kaleidoscope",
-                                "notebook",
-                                "woodheart",
-                                "scroll",
-                            ],
-                            [
                                 "fishingrod",
                                 "cycloneslate",
                                 "warpx",
@@ -89,14 +59,54 @@
                                 "warpsquare"
                             ],
                             [
+                                "letter",
                                 "Hourglass",
-                                "ToKSmall",
-                                "MPSmall",
+                                "blade",
+                                "clothes",
+                                "kaleidoscope",
+                                "notebook",
+                                "woodheart",
+                                "scroll",
+                            ],
+                            [
+                                "fir_label",
+                                "wnd_label",
+                                "crg_label",
+                                "ghs_label",
+                                "gor_label",
+                                "ice_label",
+                                "mut_label",
+                                "tok_label"
+                            ],
+                            [
+                                "fir_reward",
+                                "wnd_reward",
+                                "crg_reward",
+                                "ghs_reward",
+                                "gor_reward",
+                                "ice_reward",
+                                "mut_reward",
+                                "tok_reward"
+                            ],
+                            [
+                                "FIRBK",
+                                "WNDBK",
+                                "CRGBK",
+                                "GHSRC",
+								"GORBK",
+                                "ICEBK",
+                                "MUTBK",
+                                "triforcecrest"
+                            ],
+                            [
                                 "FIRSmall",
                                 "WNDSmall",
                                 "CRGSmall",
+                                "GHSTC",
+								"FF",
                                 "ICESmall",
-                                "MUTSmall"
+                                "MUTSmall",
+                                "ToKSmall"
                             ],
                             [
                                 "FF",
@@ -109,27 +119,7 @@
                                 "FF"
                             ],
                             [
-                                "Bright Ship",
-                                "Iron Ship",
-                                "Stone Ship",
-                                "Vintage Ship",
-                                "Demon Ship",
-                                "Tropical Ship",
-                                "Dignified Ship",
-                                "Golden Ship",
-                            ],
-                            [
-                                "Lure",
-                                "Shadows",
-                                "Skippyjack",
-                                "Toona",
-                                "Loovar",
-                                "Swordfish",
-                                "Neptoona",
-                                "Stowfish"
-                            ],
-                            [
-                                "Letter",
+                                "couragecrest",
                                 "treasure1",
                                 "treasure2",
                                 "treasure3",
