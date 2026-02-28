@@ -1,4 +1,5 @@
 
+require("scripts/autotracking/slots_data_mapping")
 require("scripts/autotracking/item_mapping")
 require("scripts/autotracking/location_mapping")
 require("scripts/autotracking/hints_mapping")

@@ -528,6 +528,12 @@
         "codes": "sword"
     },
 	{
+		"name": "Wooden Shield",
+		"type": "toggle",
+		"img": "images/items/PH_Wooden_Shield_Icon.png",
+		"codes": "shield"
+	},
+	{
         "name": "Boomerang",
         "type": "toggle",
         "img": "images/items/boomerang.png",
@@ -844,6 +850,54 @@
         "type": "toggle",
         "img": "images/items/warpsquare.png",
         "codes": "warpsquare"
+    },
+    {
+        "name": "Bright Ship",
+        "type": "toggle",
+        "img": "images/items/BrightShip.png",
+        "codes": "Bright Ship"
+    },
+    {
+        "name": "Iron Ship",
+        "type": "toggle",
+        "img": "images/items/IronShip.png",
+        "codes": "Iron Ship"
+    },
+    {
+        "name": "Stone Ship",
+        "type": "toggle",
+        "img": "images/items/StoneShip.png",
+        "codes": "Stone Ship"
+    },
+    {
+        "name": "Vintage Ship",
+        "type": "toggle",
+        "img": "images/items/VintageShip.png",
+        "codes": "Vintage Ship"
+    },
+    {
+        "name": "Demon Ship",
+        "type": "toggle",
+        "img": "images/items/DemonShip.png",
+        "codes": "Demon Ship"
+    },
+    {
+        "name": "Tropical Ship",
+        "type": "toggle",
+        "img": "images/items/TropicalShip.png",
+        "codes": "Tropical Ship"
+    },
+    {
+        "name": "Dignified Ship",
+        "type": "toggle",
+        "img": "images/items/DignifiedShip.png",
+        "codes": "Dignified Ship"
+    },
+    {
+        "name": "Golden Ship",
+        "type": "toggle",
+        "img": "images/items/GoldShip.png",
+        "codes": "Golden Ship"
     },
     // Salvageable Treasures
 	{
