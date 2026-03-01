@@ -11,8 +11,21 @@
         "type": "progressive_toggle",
 		"loop": true,
         "allow_disabled": true,
-		"initial_stage_idx": 4,
+		"initial_stage_idx": 0,
         "stages": [
+			{
+                "name": "Temple of Fire Reward: None",
+				"img": "images/items/additional_metal.png",
+                "img_mods": "overlay|/images/items/X.png",
+				"inherit_codes": false,
+				"codes": "fir_none"
+            },
+			{
+                "name": "Temple of Fire Reward: Pure Metal",
+				"img": "images/items/additional_metal.png",
+				"inherit_codes": false,
+				"codes": "fir_additional_metal"
+            },
 			{
                 "name": "Temple of Fire Reward: Crimsonine",
 				"img": "images/items/crimsonine.png",
@@ -30,19 +43,6 @@
 				"img": "images/items/aquanine.png",
 				"inherit_codes": false,
 				"codes": "fir_aquanine"
-            },
-			{
-                "name": "Temple of Fire Reward: Pure Metal",
-				"img": "images/items/additional_metal.png",
-				"inherit_codes": false,
-				"codes": "fir_additional_metal"
-            },
-			{
-                "name": "Temple of Fire Reward: None",
-				"img": "images/items/additional_metal.png",
-                "img_mods": "overlay|/images/items/X.png",
-				"inherit_codes": false,
-				"codes": "fir_none"
             }
         ],
         "codes": "fir_reward"
@@ -71,8 +71,21 @@
         "type": "progressive_toggle",
 		"loop": true,
         "allow_disabled": true,
-		"initial_stage_idx": 4,
+		"initial_stage_idx": 0,
         "stages": [
+			{
+                "name": "Temple of Wind Reward: None",
+				"img": "images/items/additional_metal.png",
+                "img_mods": "overlay|/images/items/X.png",
+				"inherit_codes": false,
+				"codes": "wnd_none"
+            },
+			{
+                "name": "Temple of Wind Reward: Pure Metal",
+				"img": "images/items/additional_metal.png",
+				"inherit_codes": false,
+				"codes": "wnd_additional_metal"
+            },
 			{
                 "name": "Temple of Wind Reward: Crimsonine",
 				"img": "images/items/crimsonine.png",
@@ -90,19 +103,6 @@
 				"img": "images/items/aquanine.png",
 				"inherit_codes": false,
 				"codes": "wnd_aquanine"
-            },
-			{
-                "name": "Temple of Wind Reward: Pure Metal",
-				"img": "images/items/additional_metal.png",
-				"inherit_codes": false,
-				"codes": "wnd_additional_metal"
-            },
-			{
-                "name": "Temple of Wind Reward: None",
-				"img": "images/items/additional_metal.png",
-                "img_mods": "overlay|/images/items/X.png",
-				"inherit_codes": false,
-				"codes": "wnd_none"
             }
         ],
         "codes": "wnd_reward"
@@ -131,8 +131,21 @@
         "type": "progressive_toggle",
 		"loop": true,
         "allow_disabled": true,
-		"initial_stage_idx": 4,
+		"initial_stage_idx": 0,
         "stages": [
+			{
+                "name": "Temple of Courage Reward: None",
+				"img": "images/items/additional_metal.png",
+                "img_mods": "overlay|/images/items/X.png",
+				"inherit_codes": false,
+				"codes": "crg_none"
+            },
+			{
+                "name": "Temple of Courage Reward: Pure Metal",
+				"img": "images/items/additional_metal.png",
+				"inherit_codes": false,
+				"codes": "crg_additional_metal"
+            },
 			{
                 "name": "Temple of Courage Reward: Crimsonine",
 				"img": "images/items/crimsonine.png",
@@ -150,19 +163,6 @@
 				"img": "images/items/aquanine.png",
 				"inherit_codes": false,
 				"codes": "crg_aquanine"
-            },
-			{
-                "name": "Temple of Courage Reward: Pure Metal",
-				"img": "images/items/additional_metal.png",
-				"inherit_codes": false,
-				"codes": "crg_additional_metal"
-            },
-			{
-                "name": "Temple of Courage Reward: None",
-				"img": "images/items/additional_metal.png",
-                "img_mods": "overlay|/images/items/X.png",
-				"inherit_codes": false,
-				"codes": "crg_none"
             }
         ],
         "codes": "crg_reward"
@@ -197,8 +197,21 @@
         "type": "progressive_toggle",
 		"loop": true,
         "allow_disabled": true,
-		"initial_stage_idx": 4,
+		"initial_stage_idx": 0,
         "stages": [
+			{
+                "name": "Ghost Ship Reward: None",
+				"img": "images/items/additional_metal.png",
+                "img_mods": "overlay|/images/items/X.png",
+				"inherit_codes": false,
+				"codes": "ghs_none"
+            },
+			{
+                "name": "Ghost Ship Reward: Pure Metal",
+				"img": "images/items/additional_metal.png",
+				"inherit_codes": false,
+				"codes": "ghs_additional_metal"
+            },
 			{
                 "name": "Ghost Ship Reward: Crimsonine",
 				"img": "images/items/crimsonine.png",
@@ -216,19 +229,6 @@
 				"img": "images/items/aquanine.png",
 				"inherit_codes": false,
 				"codes": "ghs_aquanine"
-            },
-			{
-                "name": "Ghost Ship Reward: Pure Metal",
-				"img": "images/items/additional_metal.png",
-				"inherit_codes": false,
-				"codes": "ghs_additional_metal"
-            },
-			{
-                "name": "Ghost Ship Reward: None",
-				"img": "images/items/additional_metal.png",
-                "img_mods": "overlay|/images/items/X.png",
-				"inherit_codes": false,
-				"codes": "ghs_none"
             }
         ],
         "codes": "ghs_reward"
@@ -259,6 +259,19 @@
 		"initial_stage_idx": 0,
         "stages": [
 			{
+                "name": "Goron Temple Reward: None",
+				"img": "images/items/additional_metal.png",
+                "img_mods": "overlay|/images/items/X.png",
+				"inherit_codes": false,
+				"codes": "gor_none"
+            },
+			{
+                "name": "Goron Temple Reward: Pure Metal",
+				"img": "images/items/additional_metal.png",
+				"inherit_codes": false,
+				"codes": "gor_additional_metal"
+            },
+			{
                 "name": "Goron Temple Reward: Crimsonine",
 				"img": "images/items/crimsonine.png",
 				"inherit_codes": false,
@@ -275,19 +288,6 @@
 				"img": "images/items/aquanine.png",
 				"inherit_codes": false,
 				"codes": "gor_aquanine"
-            },
-			{
-                "name": "Goron Temple Reward: Pure Metal",
-				"img": "images/items/additional_metal.png",
-				"inherit_codes": false,
-				"codes": "gor_additional_metal"
-            },
-			{
-                "name": "Goron Temple Reward: None",
-				"img": "images/items/additional_metal.png",
-                "img_mods": "overlay|/images/items/X.png",
-				"inherit_codes": false,
-				"codes": "gor_none"
             }
         ],
         "codes": "gor_reward"
@@ -309,8 +309,21 @@
         "type": "progressive_toggle",
 		"loop": true,
         "allow_disabled": true,
-		"initial_stage_idx": 1,
+		"initial_stage_idx": 0,
         "stages": [
+			{
+                "name": "Temple of Ice Reward: None",
+				"img": "images/items/additional_metal.png",
+                "img_mods": "overlay|/images/items/X.png",
+				"inherit_codes": false,
+				"codes": "ice_none"
+            },
+			{
+                "name": "Temple of Ice Reward: Pure Metal",
+				"img": "images/items/additional_metal.png",
+				"inherit_codes": false,
+				"codes": "ice_additional_metal"
+            },
 			{
                 "name": "Temple of Ice Reward: Crimsonine",
 				"img": "images/items/crimsonine.png",
@@ -328,19 +341,6 @@
 				"img": "images/items/aquanine.png",
 				"inherit_codes": false,
 				"codes": "ice_aquanine"
-            },
-			{
-                "name": "Temple of Ice Reward: Pure Metal",
-				"img": "images/items/additional_metal.png",
-				"inherit_codes": false,
-				"codes": "ice_additional_metal"
-            },
-			{
-                "name": "Temple of Ice Reward: None",
-				"img": "images/items/additional_metal.png",
-                "img_mods": "overlay|/images/items/X.png",
-				"inherit_codes": false,
-				"codes": "ice_none"
             }
         ],
         "codes": "ice_reward"
@@ -369,8 +369,21 @@
         "type": "progressive_toggle",
 		"loop": true,
         "allow_disabled": true,
-		"initial_stage_idx": 2,
+		"initial_stage_idx": 0,
         "stages": [
+			{
+                "name": "Mutoh's Temple Reward: None",
+				"img": "images/items/additional_metal.png",
+                "img_mods": "overlay|/images/items/X.png",
+				"inherit_codes": false,
+				"codes": "mut_none"
+            },
+			{
+                "name": "Mutoh's Temple Reward: Pure Metal",
+				"img": "images/items/additional_metal.png",
+				"inherit_codes": false,
+				"codes": "mut_additional_metal"
+            },
 			{
                 "name": "Mutoh's Temple Reward: Crimsonine",
 				"img": "images/items/crimsonine.png",
@@ -388,19 +401,6 @@
 				"img": "images/items/aquanine.png",
 				"inherit_codes": false,
 				"codes": "mut_aquanine"
-            },
-			{
-                "name": "Mutoh's Temple Reward: Pure Metal",
-				"img": "images/items/additional_metal.png",
-				"inherit_codes": false,
-				"codes": "mut_additional_metal"
-            },
-			{
-                "name": "Mutoh's Temple Reward: None",
-				"img": "images/items/additional_metal.png",
-                "img_mods": "overlay|/images/items/X.png",
-				"inherit_codes": false,
-				"codes": "mut_none"
             }
         ],
         "codes": "mut_reward"
@@ -429,8 +429,21 @@
         "type": "progressive_toggle",
 		"loop": true,
         "allow_disabled": true,
-		"initial_stage_idx": 4,
+		"initial_stage_idx": 0,
         "stages": [
+			{
+                "name": "Temple of the Ocean King Reward: None",
+				"img": "images/items/additional_metal.png",
+                "img_mods": "overlay|/images/items/X.png",
+				"inherit_codes": false,
+				"codes": "tok_none"
+            },
+			{
+                "name": "Temple of the Ocean King Reward: Pure Metal",
+				"img": "images/items/additional_metal.png",
+				"inherit_codes": false,
+				"codes": "tok_additional_metal"
+            },
 			{
                 "name": "Temple of the Ocean King Reward: Crimsonine",
 				"img": "images/items/crimsonine.png",
@@ -448,19 +461,6 @@
 				"img": "images/items/aquanine.png",
 				"inherit_codes": false,
 				"codes": "tok_aquanine"
-            },
-			{
-                "name": "Temple of the Ocean King Reward: Pure Metal",
-				"img": "images/items/additional_metal.png",
-				"inherit_codes": false,
-				"codes": "tok_additional_metal"
-            },
-			{
-                "name": "Temple of the Ocean King Reward: None",
-				"img": "images/items/additional_metal.png",
-                "img_mods": "overlay|/images/items/X.png",
-				"inherit_codes": false,
-				"codes": "tok_none"
             }
         ],
         "codes": "tok_reward"
@@ -525,7 +525,7 @@
                 "img": "images/items/sword_phantom.png"
             }
         ],
-        "codes": "sword"
+		"codes": "sword"
     },
 	{
 		"name": "Wooden Shield",
@@ -557,7 +557,7 @@
                 "img": "images/items/bomb_30.png"
             }
         ],
-        "codes": "bombs"
+		"codes": "bombs"
     },
     {
         "name": "Bow",
@@ -577,7 +577,7 @@
                 "img": "images/items/bow_50.png"
             }
         ],
-        "codes": "bow"
+		"codes": "bow"
     },
     {
         "name": "Bombchus",
@@ -597,7 +597,7 @@
                 "img": "images/items/bombchu_30.png"
             }
         ],
-        "codes": "bombchus"
+		"codes": "bombchus"
     },
 	{
         "name": "Grappling Hook",
@@ -666,7 +666,7 @@
                 "img": "images/items/spirit_of_power_lvl2.png"
             }
         ],
-        "codes": "spiritofpower"
+		"codes": "spiritofpower"
     },
     {
         "name": "Spirit of Wisdom",
@@ -685,7 +685,7 @@
                 "img": "images/items/spirit_of_wisdom_lvl2.png"
             }
         ],
-        "codes": "spiritofwisdom"
+		"codes": "spiritofwisdom"
     },
     {
         "name": "Spirit of Courage",
@@ -697,16 +697,14 @@
             },
             {
                 "name": "Spirit of Courage Level 1",
-                "img": "images/items/spirit_of_courage_lvl1.png",
-                "codes": "spiritofcouragebeam"
+                "img": "images/items/spirit_of_courage_lvl1.png"
             },
             {
                 "name": "Spirit of Courage Level 2",
-                "img": "images/items/spirit_of_courage_lvl2.png",
-                "codes": "spiritofcouragebeam"
+                "img": "images/items/spirit_of_courage_lvl2.png"
             }
         ],
-        "codes": "spiritofcourage"
+		"codes": "spiritofcourage"
     },
     {
         "name": "Power Gem",
