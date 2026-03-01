@@ -1,12 +1,11 @@
 
-require("scripts/autotracking/slots_data_mapping")
+--require("scripts/autotracking/slots_data_mapping")
 require("scripts/autotracking/item_mapping")
 require("scripts/autotracking/location_mapping")
-require("scripts/autotracking/hints_mapping")
+--require("scripts/autotracking/hints_mapping")
 
 CUR_INDEX = -1
 --SLOT_DATA = nil
-
 SLOT_DATA = {}
 
 function has_value (t, val)
@@ -28,7 +27,7 @@ function dump_table(o, depth)
             if type(k) ~= 'number' then
                 k = '"' .. k .. '"'
             end
-            s = s .. tabs2 .. '[' .. k .. '] = ' .. dump_table(v, depth + 1) .. ','
+            s = s .. tabs2 .. '[' .. k .. '] = ' .. dump(v, depth + 1) .. ','
         end
         return s .. tabs .. '}'
     else
@@ -70,7 +69,10 @@ function onClearHandler(slot_data)
 end
 
 function onClear(slot_data)
-    --SLOT_DATA = slot_data
+    print(string.format("called OnClear, slot_data:\n%s", dump(slot_data)))
+	PLAYER_ID = Archipelago.PlayerNumber or -1
+    TEAM_NUMBER = Archipelago.TeamNumber or 0
+    SLOT_DATA = slot_data
     CUR_INDEX = -1
     -- reset locations
     for _, location_array in pairs(LOCATION_MAPPING) do
@@ -110,14 +112,17 @@ function onClear(slot_data)
             end
         end
     end
-    PLAYER_ID = Archipelago.PlayerNumber or -1
-    TEAM_NUMBER = Archipelago.TeamNumber or 0
-    SLOT_DATA = slot_data
-    -- if Tracker:FindObjectForCode("autofill_settings").Active == true then
+    --PLAYER_ID = Archipelago.PlayerNumber or -1
+    --TEAM_NUMBER = Archipelago.TeamNumber or 0
+    --SLOT_DATA = slot_data
+	-- if Tracker:FindObjectForCode("autofill_settings").Active == true then
     --     autoFill(slot_data)
     -- end
-    -- print(PLAYER_ID, TEAM_NUMBER)
-    if Archipelago.PlayerNumber > -1 then
+    --print(PLAYER_ID, TEAM_NUMBER)
+    -- reset settings
+	Tracker:FindObjectForCode("gem_packs").AcquiredCount = slot_data["spirit_gem_packs"]
+	
+	if Archipelago.PlayerNumber > -1 then
 
         HINTS_ID = "_read_hints_"..TEAM_NUMBER.."_"..PLAYER_ID
         Archipelago:SetNotify({HINTS_ID})
@@ -146,7 +151,11 @@ function onItem(index, item_id, item_name, player_number)
                 item_obj.Active = true
             elseif item_obj.Type == "progressive" then
                 -- print("progressive")
-                item_obj.Active = true
+                if item_obj.Active then
+                    item_obj.CurrentStage = item_obj.CurrentStage + 1
+                else
+                    item_obj.Active = true
+                end
             elseif item_obj.Type == "consumable" then
                 -- print("consumable")
                 item_obj.AcquiredCount = item_obj.AcquiredCount + item_obj.Increment * (tonumber(item_pair[3]) or 1)
