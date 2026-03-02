@@ -15,7 +15,7 @@ function has_value (t, val)
     return 0
 end
 
-function dump_table(o, depth)
+function dump(o, depth)
     if depth == nil then
         depth = 0
     end
@@ -72,18 +72,19 @@ function onClear(slot_data)
     print(string.format("called OnClear, slot_data:\n%s", dump(slot_data)))
 	PLAYER_ID = Archipelago.PlayerNumber or -1
     TEAM_NUMBER = Archipelago.TeamNumber or 0
-    SLOT_DATA = slot_data
+    print(PLAYER_ID, TEAM_NUMBER)
+	SLOT_DATA = slot_data
     CUR_INDEX = -1
     -- reset locations
     for _, location_array in pairs(LOCATION_MAPPING) do
         for _, location in pairs(location_array) do
             if location then
-                local location_obj = Tracker:FindObjectForCode(location)
-                if location_obj then
-                    if location:sub(1, 1) == "@" then
-                        location_obj.AvailableChestCount = location_obj.ChestCount
+                local obj = Tracker:FindObjectForCode(location[1])
+                if obj then
+                    if location[1]:sub(1, 1) == "@" then
+                        obj.AvailableChestCount = obj.ChestCount
                     else
-                        location_obj.Active = false
+                        obj.Active = false
                     end
                 end
             end
@@ -91,36 +92,48 @@ function onClear(slot_data)
     end
     -- reset items
     for _, item_pair in pairs(ITEM_MAPPING) do
-        for item_type, item_code in pairs(item_pair) do
-            local item_obj = Tracker:FindObjectForCode(item_code)
-            if item_obj then
-                if item_obj.Type == "toggle" then
-                    item_obj.Active = false
-                elseif item_obj.Type == "progressive" then
-                    item_obj.CurrentStage = 0
-                    item_obj.Active = false
-                elseif item_obj.Type == "consumable" then
-                    if item_obj.MinCount then
-                        item_obj.AcquiredCount = item_obj.MinCount
+		item_code = item_pair[1]
+		item_type = item_pair[2]
+        if item_code and item_type then
+            local obj = Tracker:FindObjectForCode(item_code)
+            if obj then
+                if item_type == "toggle" then
+                    obj.Active = false
+                elseif item_type == "progressive" then
+                    obj.CurrentStage = 0
+                    obj.Active = false
+                elseif item_type == "consumable" then
+                    if obj.MinCount then
+                        obj.AcquiredCount = obj.MinCount
                     else
-                        item_obj.AcquiredCount = 0
+                        obj.AcquiredCount = 0
                     end
-                elseif item_obj.Type == "progressive_toggle" then
-                    item_obj.CurrentStage = 0
-                    item_obj.Active = false
+                elseif item_type == "progressive_toggle" then
+                    obj.CurrentStage = 0
+                    obj.Active = false
                 end
             end
         end
     end
-    --PLAYER_ID = Archipelago.PlayerNumber or -1
-    --TEAM_NUMBER = Archipelago.TeamNumber or 0
-    --SLOT_DATA = slot_data
-	-- if Tracker:FindObjectForCode("autofill_settings").Active == true then
-    --     autoFill(slot_data)
-    -- end
-    --print(PLAYER_ID, TEAM_NUMBER)
     -- reset settings
 	Tracker:FindObjectForCode("gem_packs").AcquiredCount = slot_data["spirit_gem_packs"]
+	if slot_data["randomize_salvage"] == 1 then
+		Tracker:FindObjectForCode("salvage_setting").Active = true
+	end
+	if slot_data["randomize_fishing"] == 1 then
+		Tracker:FindObjectForCode("fishing_setting").Active = true
+	end
+	if slot_data["randomize_triforce_crest"] == 0 then
+		Tracker:FindObjectForCode("triforcecrest").Active = true
+	end
+	if slot_data["randomize_frogs"] == 1 then
+		Tracker:FindObjectForCode("warpx").Active = true
+		Tracker:FindObjectForCode("warpphi").Active = true
+		Tracker:FindObjectForCode("warpn").Active = true
+		Tracker:FindObjectForCode("warpomega").Active = true
+		Tracker:FindObjectForCode("warpw").Active = true
+		Tracker:FindObjectForCode("warpsquare").Active = true
+	end
 	
 	if Archipelago.PlayerNumber > -1 then
 
@@ -144,27 +157,27 @@ function onItem(index, item_id, item_name, player_number)
     for _, item_pair in pairs(item) do
         item_code = item_pair[1]
         item_type = item_pair[2]
-        local item_obj = Tracker:FindObjectForCode(item_code)
-        if item_obj then
-            if item_obj.Type == "toggle" then
+        local obj = Tracker:FindObjectForCode(item_code)
+        if obj then
+            if item_type == "toggle" then
                 -- print("toggle")
-                item_obj.Active = true
-            elseif item_obj.Type == "progressive" then
+                obj.Active = true
+            elseif item_type == "progressive" then
                 -- print("progressive")
-                if item_obj.Active then
-                    item_obj.CurrentStage = item_obj.CurrentStage + 1
+                if obj.Active then
+                    obj.CurrentStage = obj.CurrentStage + 1
                 else
-                    item_obj.Active = true
+                    obj.Active = true
                 end
-            elseif item_obj.Type == "consumable" then
+            elseif item_type == "consumable" then
                 -- print("consumable")
-                item_obj.AcquiredCount = item_obj.AcquiredCount + item_obj.Increment * (tonumber(item_pair[3]) or 1)
-            elseif item_obj.Type == "progressive_toggle" then
+                obj.AcquiredCount = obj.AcquiredCount + obj.Increment * (tonumber(item_pair[3]) or 1)
+            elseif item_type == "progressive_toggle" then
                 -- print("progressive_toggle")
-                if item_obj.Active then
-                    item_obj.CurrentStage = item_obj.CurrentStage + 1
+                if obj.Active then
+                    obj.CurrentStage = obj.CurrentStage + 1
                 else
-                    item_obj.Active = true
+                    obj.Active = true
                 end
             end
         else
@@ -182,16 +195,16 @@ function onLocation(location_id, location_name)
     end
 
     for _, location in pairs(location_array) do
-        local location_obj = Tracker:FindObjectForCode(location)
-        -- print(location, location_obj)
-        if location_obj then
-            if location:sub(1, 1) == "@" then
-                location_obj.AvailableChestCount = location_obj.AvailableChestCount - 1
+        local obj = Tracker:FindObjectForCode(location[1])
+        -- print(location, obj)
+        if obj then
+            if location[1]:sub(1, 1) == "@" then
+                obj.AvailableChestCount = obj.AvailableChestCount - 1
             else
-                location_obj.Active = true
+                obj.Active = true
             end
         else
-            print(string.format("onLocation: could not find location_object for code %s", location))
+            print(string.format("onLocation: could not find location_object for code %s", location[1]))
         end
     end
 end
